@@ -1,0 +1,3 @@
+Product found: Hamburguesa Clasica
+Description value: 
+Description type: string

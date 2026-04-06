@@ -1,0 +1,200 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-white to-gray-50 text-gray-900 antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media print {
+    header,
+    nav,
+    footer {
+        display: none !important;
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+@media print {
+    body {
+        margin: 0;
+    }
+
+    .card {
+        box-shadow: none !important;
+        border: none !important;
+    }
+}
+
+@layer components {
+  /* Modern Button Styles */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply shadow-sm hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-600 to-primary-700 text-white;
+    @apply hover:from-primary-700 hover:to-primary-800;
+    @apply focus:ring-primary-500;
+    @apply shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30;
+  }
+
+  .btn-secondary {
+    @apply btn border border-gray-300 bg-white/80 backdrop-blur-sm text-gray-700;
+    @apply hover:bg-white hover:border-gray-400;
+    @apply focus:ring-primary-500;
+    @apply shadow-sm hover:shadow-md;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-gray-700 hover:bg-gray-100/80;
+    @apply focus:ring-primary-500;
+  }
+
+  /* Modern Card Styles */
+  .card {
+    @apply rounded-2xl border border-gray-200/80 bg-white/90 backdrop-blur-sm p-6;
+    @apply shadow-lg shadow-gray-900/5;
+    @apply transition-all duration-300;
+    @apply hover:shadow-xl hover:shadow-gray-900/10;
+    @apply hover:border-gray-300/80;
+  }
+
+  .card-interactive {
+    @apply card cursor-pointer;
+    @apply hover:-translate-y-1 hover:scale-[1.02];
+  }
+
+  /* Glassmorphism Card */
+  .card-glass {
+    @apply rounded-2xl border border-white/20 bg-white/70 backdrop-blur-xl p-6;
+    @apply shadow-2xl shadow-gray-900/10;
+    @apply transition-all duration-300;
+  }
+
+  /* Modern Input Styles */
+  .input {
+    @apply w-full rounded-xl border border-gray-300 bg-white/80 backdrop-blur-sm px-4 py-3 text-sm;
+    @apply transition-all duration-200;
+    @apply focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20;
+    @apply placeholder:text-gray-400;
+    @apply hover:border-gray-400;
+  }
+
+  .input-error {
+    @apply input border-red-300 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  /* Modern Badge Styles */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+    @apply shadow-sm;
+    @apply transition-all duration-200;
+  }
+
+  .badge-success {
+    @apply badge bg-gradient-to-r from-green-500 to-emerald-500 text-white;
+    @apply shadow-green-500/25;
+  }
+
+  .badge-warning {
+    @apply badge bg-gradient-to-r from-yellow-500 to-amber-500 text-white;
+    @apply shadow-yellow-500/25;
+  }
+
+  .badge-error {
+    @apply badge bg-gradient-to-r from-red-500 to-rose-500 text-white;
+    @apply shadow-red-500/25;
+  }
+
+  .badge-info {
+    @apply badge bg-gradient-to-r from-blue-500 to-cyan-500 text-white;
+    @apply shadow-blue-500/25;
+  }
+
+  .badge-primary {
+    @apply badge bg-gradient-to-r from-primary-600 to-primary-700 text-white;
+    @apply shadow-primary-500/25;
+  }
+
+  /* Modern Container */
+  .container-modern {
+    @apply mx-auto max-w-7xl px-3 sm:px-4 lg:px-6;
+  }
+
+  /* Gradient Text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent;
+  }
+
+  /* Modern Section */
+  .section-modern {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Animated Background Pattern */
+  .bg-pattern {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(220, 38, 38, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  /* Shimmer Effect */
+  .shimmer {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer::after {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    @apply bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    animation: shimmer 2s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  /* Pulse Glow */
+  .pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+    }
+  }
+}
+

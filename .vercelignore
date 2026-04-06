@@ -1,0 +1,8 @@
+# Tests
+tests/
+*.test.ts
+*.spec.ts
+
+# Scripts
+scripts/
+*.sql

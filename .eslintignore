@@ -1,0 +1,9 @@
+# Scripts de verificación
+scripts/verificar-implementacion.js
+
+# Archivos de configuración de Sentry (tienen warnings menores)
+sentry.*.config.ts
+
+# Tests (tienen muchos any por diseño)
+tests/**/*.test.ts
+

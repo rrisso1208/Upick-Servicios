@@ -1,0 +1,27 @@
+{
+  "extends": ["eslint:recommended", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2022": true
+  },
+  "plugins": ["react-hooks"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
+    "no-undef": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "no-unreachable": "off",
+    "no-useless-escape": "off",
+    "no-control-regex": "off",
+    "no-case-declarations": "off",
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
+  }
+}
